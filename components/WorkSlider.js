@@ -3,8 +3,9 @@ import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowRight, BsGithub, BsDownload } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // data
 const workSlides = {
@@ -12,40 +13,56 @@ const workSlides = {
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Food Recipes Web',
+          path: '/food-recipes.png',
+          linkDemoProject: 'https://food-recipes-app-fe.vercel.app/',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/food-recipes-app-fe',
+          emailDemo: 'user01@gmail.com',
+          password: 'Password: user01',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Hire Job Web',
+          path: '/hire-project.png',
+          linkDemoProject: 'https://peworldin.netlify.app/',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/HireJob-FE',
+          emailDemo: 'user01@gmail.com',
+          password: 'Password: user01',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Ankasa Web',
+          path: '/ankasa-web.png',
+          linkDemoProject: 'https://ankasa-ticketing-silk.vercel.app/',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/ankasa-fe',
+          emailDemo: 'user_demo@gmail.com',
+          password: 'Userdemo@123',
         },
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Food Recipes Mobile',
+          path: '/food-recipes-mobile.png',
+          linkDemoProject: 'https://github.com/rikimuhammadasli021299/FoodRecipesMobile/releases/download/v0.0.1/food-recipes.apk',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/FoodRecipesMobile',
+          emailDemo: 'user01@gmail.com',
+          password: 'Password: user01',
         },
       ],
     },
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Food Recipes API',
+          path: '/food-recipes-api.png',
+          linkDemoProject: 'https://documenter.getpostman.com/view/30796012/2s9YypEiMo#intro',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/food-recipe-api',
+          emailDemo: 'user01@gmail.com',
+          password: 'Password: user01',
         },
         {
-          title: 'title',
-          path: '/thumb1.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb2.jpg',
-        },
-        {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Hire Job API',
+          path: '/hire-job-api.png',
+          linkDemoProject: 'https://documenter.getpostman.com/view/30796012/2s9YypEiWc',
+          linkGithub: 'https://github.com/rikimuhammadasli021299/hire-job-be',
+          emailDemo: 'user01@gmail.com',
+          password: 'Password: user01',
         },
       ],
     },
@@ -65,7 +82,7 @@ const WorkSlider = () => {
       {workSlides.slides.map((items, i) => {
         return (
           <SwiperSlide key={i}>
-            <div className='grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer'>
+            <div className='grid grid-cols-2 grid-rows-2 gap-4'>
               {items.images.map((image, i) => {
                 return (
                   <div key={i} className='relative rounded-lg overflow-hidden flex items-center justify-center group'>
@@ -75,16 +92,40 @@ const WorkSlider = () => {
                       {/* overlay gradient */}
                       <div className='absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700'></div>
                       {/* title */}
-                      <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300'>
-                        <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em]'>
+                      <div className='absolute bottom-0 translate-y-full group-hover:-translate-y-1 group-hover:md:-translate-y-5 group-hover:xl:-translate-y-15 transition-all duration-300'>
+                        <Link href={`${image.linkDemoProject}`} target='blank' className='delay-100 font-semibold text-center cursor-pointer'>
+                          {image.title}
+                        </Link>
+                        <div className='delay-100 hidden md:flex flex-col'>Account Demo</div>
+                        <div className='delay-100 hidden md:flex flex-col'>Email: {image.emailDemo}</div>
+                        <div className='delay-100 hidden md:flex flex-col'>Passowrd: {image.password}</div>
+                        <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em] mt-5 cursor-pointer'>
                           {/* title part 1 */}
-                          <div className='delay-100'>LIVE</div>
+                          <Link href={image.linkDemoProject} target='black' className='delay-100'>
+                            {image.title === 'Food Recipes Mobile' ? 'DOWNLOAD' : 'LIVE'}
+                          </Link>
                           {/* title part 2 */}
-                          <div className=' translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>PROJECT</div>
+                          <Link href={image.linkDemoProject} target='black' className=' translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
+                            {image.title === 'Food Recipes Mobile' ? 'APK' : 'PROJECT'}
+                          </Link>
                           {/* icon */}
-                          <div className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'>
-                            <BsArrowRight />
-                          </div>
+                          <Link href={image.linkDemoProject} target='black' className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'>
+                            {image.title === 'Food Recipes Mobile' ? <BsDownload /> : <BsArrowRight />}
+                          </Link>
+                        </div>
+                        <div className='flex items-center gap-x-2 text-[13px] tracking-[0.2em] mt-2 cursor-pointer'>
+                          {/* title part 1 */}
+                          <Link href={image.linkGithub} target='blank' className='delay-100'>
+                            DETAIL
+                          </Link>
+                          {/* title part 2 */}
+                          <Link href={image.linkGithub} target='blank' className=' translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150'>
+                            PROJECT
+                          </Link>
+                          {/* icon */}
+                          <Link href={image.linkGithub} target='blank' className='text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200'>
+                            <BsGithub />
+                          </Link>
                         </div>
                       </div>
                     </div>
