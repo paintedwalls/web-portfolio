@@ -66,7 +66,7 @@ const aboutData = [
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className='h-full bg-primary/30 mt-10 py-32 text-center xl:text-left'>
+    <div className='h-full bg-primary/30 pt-10 text-center xl:text-left'>
       <Circles />
       {/* avatar img */}
       <motion.div variants={fadeIn('right', 0.2)} initial='hidden' animate={'show'} exit={'hidden'} className='hidden xl:flex absolute bottom-0 -left-[200px]'>
