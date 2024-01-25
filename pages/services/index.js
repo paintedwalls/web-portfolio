@@ -16,7 +16,7 @@ const Services = () => {
               My Services <span className='text-accent'>.</span>
             </motion.h2>
             <motion.p variants={fadeIn('up', 0.4)} initial='hidden' animate='show' exit='hidden' className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo nihil sapiente nam ullam. Sapiente, numquam!
+              The world of programming is my passion so I am very enthusiastic and committed to giving the best in every project I work on.
             </motion.p>
           </div>
           {/* slider */}

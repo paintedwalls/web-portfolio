@@ -4,34 +4,25 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 // icons
-import { RxCrop, RxPencil2, RxDesktop, RxReader, RxRocket, RxArrowTopRight } from 'react-icons/rx';
+import { RxDesktop, RxArrowTopRight, RxMobile } from 'react-icons/rx';
+import { GoDatabase } from 'react-icons/go';
 
 // data
 const serviceData = [
   {
-    icon: <RxCrop />,
-    title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    icon: <RxPencil2 />,
-    title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
     icon: <RxDesktop />,
-    title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Front-End Web',
+    description: 'Turn your ideas into visually appealing and user-friendly websites.',
   },
   {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <GoDatabase />,
+    title: 'Back-End Web',
+    description: 'Experience smooth functionality, strong databases, and peak performance for your website.',
   },
   {
-    icon: <RxRocket />,
-    title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: <RxMobile />,
+    title: 'Mobile Development',
+    description: 'Showcase your uniqueness through modern and user-friendly mobile apps, boosting your digital presence.',
   },
 ];
 
@@ -59,17 +50,13 @@ const ServiceSlider = () => {
       {serviceData.map((items, i) => {
         return (
           <SwiperSlide key={i}>
-            <div className='bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
+            <div className='bg-[rgba(65,47,123,0.15)] xl:h-[300px] md:h-[320px] rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
               {/* icon */}
               <div className='text-4xl text-accent mb-4'>{items.icon}</div>
               {/* title & desc */}
               <div className='mb-8'>
                 <div className='mb-2 text-lg'>{items.title}</div>
                 <p className='max-w-[350px] leading-normal'>{items.description}</p>
-              </div>
-              {/* arrow */}
-              <div className='text-3xl'>
-                <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
               </div>
             </div>
           </SwiperSlide>
